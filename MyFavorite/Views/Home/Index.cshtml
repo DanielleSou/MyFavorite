@@ -1,0 +1,43 @@
+﻿@model Filme
+@{
+    ViewData["Title"] = "Início";
+}
+<style>
+    #footer {
+        position: static;
+    }
+</style>
+<div class="text-center pb-2">
+
+
+    <h1 class="text-primary">Bem Vindo (a) ao Meu Favorito Filmes e Séries</h1>
+    <div>
+        <h2 class ="text-primary">Aqui você pode ver os filmes e as séries mais populares e que estão em exibição!!</h2>
+    </div>
+
+    <div>
+        <h3 class ="text-primary">Você também pode criar suas listas de favoritos !</h3>
+    </div>
+
+
+</div>
+
+
+<div class="border p-3 mt-4 row">
+    <div>
+        <h3 class="text-primary">Filmes</h3>
+
+    </div>
+
+    @Html.Raw(ViewBag.Result)
+</div>
+
+<div class="border p-3 mt-4 row">
+    <br />
+    <br />
+    <h3 class="text-primary">Series</h3>
+    <br />
+
+    @Html.Raw(ViewData["Series"])
+</div>
+

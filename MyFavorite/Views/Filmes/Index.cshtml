@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    #footer {
+        position: static;
+    }
+</style>
+
+<div class="text-center" id="navbarColor01">
+
+    <h1 class="text-primary">Os Filmes mais Populares</h1>
+</div>
+
+<div class="row pb-3">
+    @Html.Raw(ViewBag.Result)
+</div>
+<div>
+    <ul class="pagination pagination-sm">
+        <li class="page-item ">
+            <a class="page-link" asp-controller="Filmes" asp-action="Index" asp-route-pageNo="1">1</a>
+        </li>
+        <li class="page-item ">
+            <a class="page-link" asp-controller="Filmes" asp-action="Index" asp-route-pageNo="2">2</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" asp-controller="Filmes" asp-action="Index" asp-route-pageNo="3">3</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" asp-controller="Filmes" asp-action="Index" asp-route-pageNo="4">4</a>
+        </li>
+        <li class="page-item">
+            <a class="page-link" asp-controller="Filmes" asp-action="Index" asp-route-pageNo="5">5</a>
+        </li>
+    </ul>
+</div>

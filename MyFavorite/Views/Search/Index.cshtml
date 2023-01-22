@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Search";
+}
+<style>
+    #footer {
+        position: static;
+    }
+</style>
+
+<div class="text-primary">
+
+    <h1> Resultados de sua pesquisa</h1>
+</div>
+
+<div class="row pb-3">
+    @Html.Raw(ViewBag.Result)
+</div>

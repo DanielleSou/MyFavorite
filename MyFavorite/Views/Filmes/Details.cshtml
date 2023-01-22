@@ -1,0 +1,61 @@
+﻿@model MyFavorite.Models.ResponseDetailsFilme
+@{
+    ViewData["Title"] = "Details";
+}
+
+<style>
+    #footer {
+        position: static;
+    }
+</style>
+
+<div class="row">
+    <div class="col-4 pt-4">
+        <img src="https://image.tmdb.org/t/p/w500/@Model.poster_path" class="img-fluid" style="border-radius:5px;" />
+    </div>
+
+    <div class="col-8">
+        <div class="border p-3 mt-4 row">
+            <div class="col-12 pb-2">
+                <h2 class="text-primary">
+                    Detalhes  do  Filme
+                </h2>
+                <hr />
+            </div>
+
+
+            <div class="text-primary">
+                <h4>@Model.title </h4>
+                <div class="text-secondary"> Sinopse:</div>
+                <p> @Model.overview</p>
+                <div class="text-secondary">Status: </div>
+                <p>@Model.status </p>
+                <div class="text-secondary"> Data de Lançamento:</div>
+                <p>@Model.release_date</p>
+
+                <div class="text-secondary"> País de origem: </div>
+                @for (int i = 0; i < @Model.production_countries!.Count; i++)
+                {
+                    <p>@Model.production_countries[i].name</p>
+                }
+                
+
+                <p>
+                    <div class="text-secondary">  Produtoras: </div>
+                    @for (int i = 0; i < @Model.production_companies!.Count; i++)
+                    {
+                    <p>@Model.production_companies[i].name</p>
+                    }
+
+               <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Adicionar a Lista de Favoritos </a>
+                        <a class="dropdown-item" asp-controller="Filme" asp-action="Favorito"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+</div>

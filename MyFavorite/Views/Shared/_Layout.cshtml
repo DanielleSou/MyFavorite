@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="pt-pt">
+<meta charset="utf-8" />
+<meta name="google-site-verification" content="width=device-width, initial-scale=1">
+<title>@ViewData["Title"] - My Favorite  </title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.2.3/journal/bootstrap.min.css" integrity="sha512-idjfPXQ6riP0BTBfHP0Suns3C1yZK486mMgm6Dd1pRQDizubroQ6EMZNP2S86C42mTOXCfKAQ/wcQ//Q3V2mQg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/MyFavorite.styles.css" asp-append-version="true" />
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index"> ****** Meus Filmes e Séries ******</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Menu</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-controller="Filmes" asp-action="Index">Filmes</a>
+                                <a class="dropdown-item" asp-controller="Series" asp-action="Index">Séries</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <partial name="_LoginPartial" />
+                    <form class="d-flex">
+                        <input class="form-control me-sm-2" type="search" placeholder="Search" name="query">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit" asp-controller="Search" asp-action="Index">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+   
+    <main role="main" class="pb-3">
+        @RenderBody()
+    </main>
+    </div>
+    <footer id="footer" class="border-top footer text-muted">
+        <div class="container">
+            &copy; Janeiro-2023 - MyFavorite, Projeto de Finalização de Curso EFA- Programador(a) de Informática - EISnt - By - Danielle Sousa
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
