@@ -47,12 +47,11 @@
                     <p>@Model.production_companies[i].name</p>
                     }
 
-               <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Adicionar a Lista de Favoritos </a>
-                        <a class="dropdown-item" asp-controller="Filme" asp-action="Favorito"></a>
-                    </li>
-                </ul>
+                    @if (User.Claims.Any())
+                    {
+                    <a class="w-100 btn btn-lg btn-primary" asp-controller="Filmes" asp-action="PressedFavoritesButton" asp-route-id="@Model.id">@Html.Raw(TempData["buttonMessage"])</a>
+                    <p>@Html.Raw(TempData["sucesso"])</p>
+                    }
             </div>
         </div>
     </div>
