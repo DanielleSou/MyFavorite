@@ -37,20 +37,23 @@ namespace MyFavorite.Controllers
 
             ResponseDetailsFilme rootObject = JsonConvert.DeserializeObject<ResponseDetailsFilme>(content)!;
 
+            bool isFavorite = FavoriteExists(id);
+
+            if (isFavorite)
+            {
+                TempData["buttonMessage"] = "Remover dos Favoritos";
+            }
+            else
+            {
+                TempData["buttonMessage"] = "Adicionar aos Favoritos";
+            }
 
 
             return View(rootObject);
-
         }
 
-        //public IActionResult FavoritoFilme(ResponseDetailsFilme filme)
-        //{
-
-        //}
-
-
-
         public void CallAPIForPopular(int? page)
+
         {
             int pageNo = Convert.ToInt32(page) == 0 ? 1 : Convert.ToInt32(page);
             string apiKey = "824b02750cdd141a844ce98e04d02d29";
@@ -66,7 +69,7 @@ namespace MyFavorite.Controllers
 
             foreach (Filme result in rootObject.results!)
             {
-                string image = result == null ? Url.Content("~/Content/Image/no-image.png") :"https://image.tmdb.org/t/p/w500/" + result.poster_path;
+                string image = result == null ? Url.Content("~/Content/Image/no-image.png") : "https://image.tmdb.org/t/p/w500/" + result.poster_path;
 
 
                 sb.Append("<div class=\"col-lg-2 col-md-9 mb-2 d-flex align-items-stretch\" resourceId=\"" + result!.id + "\">" +
@@ -81,8 +84,76 @@ namespace MyFavorite.Controllers
 
             ViewBag.Result = sb.ToString();
         }
-        
 
-    }
+        public IActionResult PressedFavoritesButton(int id)
+        {
+            bool isFavorite = FavoriteExists(id);
 
+            if (isFavorite)
+            {
+                RemoveFromFavorites(id);
+            }
+            else
+            {
+                AddToFavorites(id);
+            }
+
+            return RedirectToAction("Details", new { id = id });
+        }
+
+        public void AddToFavorites(int id)
+        {
+
+            var claimsIdentity = (ClaimsIdentity)User.Identity!;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            String userId = claim!.Value;
+
+            if (ModelState.IsValid)
+            {
+                Favorite fav = new();
+                fav.IdApi = id;
+                fav.Type = "filme";
+                fav.IdentityUserId = userId;
+
+                _db.Favorites.Add(fav);
+                _db.SaveChanges();
+                TempData["sucesso"] = "Adicionado(a) com sucesso";
+            }
+        }
+
+        public void RemoveFromFavorites(int id)
+        {
+
+            var claimsIdentity = (ClaimsIdentity)User.Identity!;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            String userId = claim!.Value;
+
+            var favorite = _db.Favorites.First(m => m.IdApi == id && m.IdentityUserId == userId && m.Type == "filme");
+
+            if (favorite != null)
+            {
+                _db.Favorites.Remove(favorite);
+                _db.SaveChanges();
+                TempData["sucesso"] = "Removido com sucesso";
+            }
+
+        }
+
+        private bool FavoriteExists(int? id)
+        {
+
+            if (User.Claims.Any())
+            {
+
+                var claimsIdentity = (ClaimsIdentity)User.Identity!;
+                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                String userId = claim!.Value;
+
+                return _db.Favorites.Any(e => e.IdApi == id && e.IdentityUserId == userId && e.Type == "filme");
+            }
+            else
+            {
+                return false;
+            }
+        }
 }
