@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
+
 using System.Text;
 namespace MyFavorite.Models
 {

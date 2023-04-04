@@ -38,7 +38,7 @@
                 {
                     <p>@Model.production_countries[i].name</p>
                 }
-                
+
 
                 <p>
                     <div class="text-secondary">  Produtoras: </div>
@@ -46,7 +46,6 @@
                     {
                     <p>@Model.production_companies[i].name</p>
                     }
-
                     @if (User.Claims.Any())
                     {
                     <a class="w-100 btn btn-lg btn-primary" asp-controller="Filmes" asp-action="PressedFavoritesButton" asp-route-id="@Model.id">@Html.Raw(TempData["buttonMessage"])</a>
@@ -55,6 +54,4 @@
             </div>
         </div>
     </div>
-</div>
-<div>
 </div>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\MyFavorite.csproj": {}
+    "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\MyFavorite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\MyFavorite.csproj": {
+    "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\MyFavorite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\MyFavorite.csproj",
+        "projectUniqueName": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\MyFavorite.csproj",
         "projectName": "MyFavorite",
-        "projectPath": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\MyFavorite.csproj",
+        "projectPath": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\MyFavorite.csproj",
         "packagesPath": "C:\\Users\\Danielle Cruz\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\obj\\",
+        "outputPath": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -67,9 +67,13 @@
               "target": "Package",
               "version": "[7.0.2, )"
             },
+            "Microsoft.Exchange.WebServices": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[7.0.2, )"
+              "version": "[7.0.3, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",

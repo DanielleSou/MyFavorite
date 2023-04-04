@@ -1,8 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.FlowAnalysis.DataFlow;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Exchange.WebServices.Auth.Validation;
+using MyFavorite.Data;
 using MyFavorite.Models;
 using Newtonsoft.Json;
 using System.Net;
+using System.Security.Claims;
 using System.Text;
 
 namespace MyFavorite.Controllers
@@ -22,7 +27,7 @@ namespace MyFavorite.Controllers
 
             return View();
         }
-       
+
         public IActionResult Details(int? id)
         {
             if (id == null)
@@ -156,4 +161,6 @@ namespace MyFavorite.Controllers
                 return false;
             }
         }
+
+    }
 }

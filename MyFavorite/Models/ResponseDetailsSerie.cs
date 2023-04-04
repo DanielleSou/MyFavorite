@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+
 namespace MyFavorite.Models
 {
     public class ResponseDetailsSerie

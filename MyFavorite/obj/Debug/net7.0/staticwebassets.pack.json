@@ -1,19 +1,19 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MyFavorite.bundle.scp.css",
+      "Id": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MyFavorite.bundle.scp.css",
       "PackagePath": "staticwebassets\\MyFavorite.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\css\\bootstrap.min.css",
+      "Id": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\css\\site.css",
+      "Id": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\js\\site.js",
+      "Id": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {

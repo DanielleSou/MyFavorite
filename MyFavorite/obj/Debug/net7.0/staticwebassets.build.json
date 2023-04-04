@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "39h8vUKafPGD0Bh73QzxF3jlEmI7V3Q7wjJOJTkr9io=",
+  "Hash": "Xem3eWvqeCMwStV+ltqbZ6J13OK1C5QFZ6zEuRM4DOQ=",
   "Source": "MyFavorite",
   "BasePath": "_content/MyFavorite",
   "Mode": "Default",
@@ -10,7 +10,7 @@
     {
       "Name": "MyFavorite\\wwwroot",
       "Source": "MyFavorite",
-      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\",
       "BasePath": "_content/MyFavorite",
       "Pattern": "**"
     }
@@ -1037,10 +1037,10 @@
       "OriginalItemSpec": "C:\\Users\\Danielle Cruz\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\7.0.2\\staticwebassets\\V5\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MyFavorite.styles.css",
+      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MyFavorite.styles.css",
       "SourceId": "MyFavorite",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\bundle\\",
       "BasePath": "_content/MyFavorite",
       "RelativePath": "MyFavorite.styles.css",
       "AssetKind": "All",
@@ -1051,13 +1051,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MyFavorite.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\bundle\\MyFavorite.styles.css"
     },
     {
-      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MyFavorite.bundle.scp.css",
+      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MyFavorite.bundle.scp.css",
       "SourceId": "MyFavorite",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\",
       "BasePath": "_content/MyFavorite",
       "RelativePath": "MyFavorite.bundle.scp.css",
       "AssetKind": "All",
@@ -1068,13 +1068,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MyFavorite.bundle.scp.css"
+      "OriginalItemSpec": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\MyFavorite.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\css\\bootstrap.min.css",
+      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\css\\bootstrap.min.css",
       "SourceId": "MyFavorite",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\",
       "BasePath": "_content/MyFavorite",
       "RelativePath": "css/bootstrap.min.css",
       "AssetKind": "All",
@@ -1088,10 +1088,10 @@
       "OriginalItemSpec": "wwwroot\\css\\bootstrap.min.css"
     },
     {
-      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\css\\site.css",
+      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\css\\site.css",
       "SourceId": "MyFavorite",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\",
       "BasePath": "_content/MyFavorite",
       "RelativePath": "css/site.css",
       "AssetKind": "All",
@@ -1105,10 +1105,10 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
-      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\js\\site.js",
+      "Identity": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\js\\site.js",
       "SourceId": "MyFavorite",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Programacao\\MyFavorite-DCS\\MyFavorite\\MyFavorite\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Danielle Cruz\\Documents\\Git\\MyFavorite\\MyFavorite\\wwwroot\\",
       "BasePath": "_content/MyFavorite",
       "RelativePath": "js/site.js",
       "AssetKind": "All",
