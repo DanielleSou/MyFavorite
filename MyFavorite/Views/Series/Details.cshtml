@@ -47,7 +47,12 @@
                 {
                     <p>@Model.production_companies[i].name</p>
                 }
-                <a class="w-100 btn btn-lg btn-primary" asp-controller="Series" asp-action="Favorito" asp-route-id="@Model.id">Adicionar a Lista de Favoritos </a>
+                @if (User.Claims.Any())
+                {
+                    <a class="w-100 btn btn-lg btn-primary" asp-controller="Series" asp-action="PressedFavoritesButton" asp-route-id="@Model.id">@Html.Raw(TempData["buttonMessage"])</a>
+                    <p>@Html.Raw(TempData["sucesso"])</p>
+                }
+               
             </div>
         </div>
     </div>
