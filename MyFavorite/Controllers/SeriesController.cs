@@ -40,22 +40,19 @@ namespace MyFavorite.Controllers
             string content = client.DownloadString(apiToRequest);
 
             ResponseDetailsSerie rootObject = JsonConvert.DeserializeObject<ResponseDetailsSerie>(content)!;
-            //HttpContext.Session["selectedSerie"] = rootObject;
+
+            bool isFavorite = FavoriteExists(id);
+
+            if (isFavorite)
+            {
+                TempData["buttonMessage"] = "Remover dos Favoritos";
+            }
+            else
+            {
+                TempData["buttonMessage"] = "Adicionar aos Favoritos";
+            }
 
             return View(rootObject);
-        }
-
-        //[Authorize]
-        public IActionResult Favorito(int id)
-        {
-            //ResponseDetailsSerie? selectedSerie = (ResponseDetailsSerie?)Session["selectedSerie"];
-            if (ModelState.IsValid)
-            {
-                //_db.Series.Add(selectedSerie);
-                //_db.SaveChanges();
-                TempData["sucesso"] = "Adicionada com sucesso";
-            }
-            return RedirectToAction("Details", new { id = id });
         }
 
         public void CallAPIForPopularTv(int? page)
@@ -68,7 +65,6 @@ namespace MyFavorite.Controllers
             string content = client.DownloadString(apiToRequest);
 
             ResponseSerie rootObject = JsonConvert.DeserializeObject<ResponseSerie>(content)!;
-
 
             StringBuilder sb = new();
             foreach (Serie result in rootObject.results!)
@@ -87,6 +83,61 @@ namespace MyFavorite.Controllers
             }
 
             ViewBag.Result = sb.ToString();
+        }
+
+        public IActionResult PressedFavoritesButton(int id)
+        {
+            bool isFavorite = FavoriteExists(id);
+
+            if (isFavorite)
+            {
+                RemoveFromFavorites(id);
+            }
+            else
+            {
+                AddToFavorites(id);
+            }
+
+            return RedirectToAction("Details", new { id = id });
+        }
+
+        public void AddToFavorites(int id)
+        {
+
+            var claimsIdentity = (ClaimsIdentity)User.Identity!;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            String userId = claim!.Value;
+
+            if (ModelState.IsValid)
+            {
+                Favorite fav = new();
+                fav.IdApi = id;
+                fav.Type = "serie";
+                fav.IdentityUserId = userId;
+
+                _db.Favorites.Add(fav);
+                _db.SaveChanges();
+                TempData["sucesso"] = "Adicionado(a) com sucesso";
+            }
+
+
+        }
+        public void RemoveFromFavorites(int id)
+        {
+
+            var claimsIdentity = (ClaimsIdentity)User.Identity!;
+            var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+            String userId = claim!.Value;
+
+            var favorite = _db.Favorites.First(m => m.IdApi == id && m.IdentityUserId == userId && m.Type == "serie");
+
+            if (favorite != null)
+            {
+                _db.Favorites.Remove(favorite);
+                _db.SaveChanges();
+                TempData["sucesso"] = "Removida com sucesso";
+            }
+
         }
     }
 }
