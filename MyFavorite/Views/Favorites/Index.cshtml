@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MyFavorite.Models.Favorite>
+
+@{
+    ViewData["Title"] = "Favoritos";
+
+}
+
+<style>
+    #footer {
+        position: static;
+    }
+</style>
+
+<div class="text-center" id="navbarColor01">
+    <h1 class="text-primary">Seus Favoritos</h1>
+</div>
+
+<div class="border p-3 mt-4 row">
+    <div>
+        <h3 class="text-primary">Filmes</h3>
+    </div>
+  
+    @Html.Raw(ViewData["Filmes"])
+
+</div>
+
+<div class="border p-3 mt-4 row">
+    <div>
+        <h3 class="text-primary">Séries</h3>
+    </div>
+
+    @Html.Raw(ViewData["Series"])
+</div>
+
+
