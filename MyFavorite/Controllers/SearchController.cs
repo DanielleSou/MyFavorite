@@ -31,16 +31,13 @@ namespace MyFavorite.Controllers
             ResponseSearch rootObject = JsonConvert.DeserializeObject<ResponseSearch>(content);
 
             StringBuilder sb = new();
-            
-            
+               
             foreach (Search result in rootObject.results!)
             {
                 if (result.media_type != "person")
                 {
                     string image = result == null ? Url.Content("~/Content/Image/no-image.png") : "https://image.tmdb.org/t/p/w500/" + result.poster_path;
                     string detailsLink = "";
-
-
 
                     if (result!.media_type == "movie")
                     {
@@ -50,8 +47,6 @@ namespace MyFavorite.Controllers
                     {
                         detailsLink = "<a class=\"text-decoration-none\" href=\"/Series/Details/" + result!.id + "\">";
                     }
-
-
                     sb.Append("<div class=\"col-lg-2 col-md-9 mb-2 d-flex align-items-stretch\" resourceId=\"" + result! + "\">" +
                         "<div class=\"row p-2\">" +
                         "<div class=\"card border-light mb-3\">" +
@@ -60,11 +55,8 @@ namespace MyFavorite.Controllers
                         detailsLink +
                         result!.name + "</a></h5></div>" +
                         "</div></div></div>");
-                }
-               
+                }   
             }
-
-
             ViewBag.Result = sb.ToString();
         }
     }
