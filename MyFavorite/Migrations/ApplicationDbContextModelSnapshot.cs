@@ -224,109 +224,29 @@ namespace MyFavorite.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
-            modelBuilder.Entity("MyFavorite.Models.FavoritosFilmes", b =>
+            modelBuilder.Entity("MyFavorite.Models.Favorite", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("UserId")
+                    b.Property<int>("IdApi")
                         .HasColumnType("int");
 
-                    b.Property<int>("idFilme")
-                        .HasColumnType("int");
+                    b.Property<string>("IdentityUserId")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasKey("id");
-
-                    b.ToTable("FavoritosFilmes");
-                });
-
-            modelBuilder.Entity("MyFavorite.Models.FavoritosSeries", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("idSerie")
-                        .HasColumnType("int");
-
-                    b.HasKey("id");
-
-                    b.ToTable("FavoritosSeries");
-                });
-
-            modelBuilder.Entity("MyFavorite.Models.Filme", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("original_language")
+                    b.Property<string>("Type")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("overview")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                    b.HasKey("Id");
 
-                    b.Property<float?>("popularity")
-                        .HasColumnType("real");
+                    b.HasIndex("IdentityUserId");
 
-                    b.Property<string>("poster_path")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("title")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool?>("video")
-                        .HasColumnType("bit");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Filmes");
-                });
-
-            modelBuilder.Entity("MyFavorite.Models.Serie", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
-
-                    b.Property<string>("name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("original_language")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("overview")
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
-
-                    b.Property<float?>("popularity")
-                        .HasColumnType("real");
-
-                    b.Property<string>("poster_path")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("season_number")
-                        .HasColumnType("int");
-
-                    b.Property<bool?>("video")
-                        .HasColumnType("bit");
-
-                    b.HasKey("id");
-
-                    b.ToTable("Series");
+                    b.ToTable("Favorites");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -378,6 +298,15 @@ namespace MyFavorite.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("MyFavorite.Models.Favorite", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "IdentityUser")
+                        .WithMany()
+                        .HasForeignKey("IdentityUserId");
+
+                    b.Navigation("IdentityUser");
                 });
 #pragma warning restore 612, 618
         }
