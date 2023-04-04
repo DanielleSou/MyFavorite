@@ -28,7 +28,7 @@ namespace MyFavorite.Controllers
             if (id == null)
                 return NotFound();
 
-            //Ir buscar os detalhes do filme ao TMDB
+
             string apiKey = "824b02750cdd141a844ce98e04d02d29";
             string apiToRequest = "https://api.themoviedb.org/3/movie/" + id + "?api_key=" + apiKey + "&language=pt-PT";
 
