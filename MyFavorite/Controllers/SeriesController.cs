@@ -1,12 +1,16 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Exchange.WebServices.Data;
 using MyFavorite.Data;
 using MyFavorite.Models;
 using Newtonsoft.Json;
 using System.Net;
+using System.Security.Claims;
+using System.Security.Principal;
 using System.Text;
 
 namespace MyFavorite.Controllers
@@ -138,6 +142,21 @@ namespace MyFavorite.Controllers
                 TempData["sucesso"] = "Removida com sucesso";
             }
 
+        }
+        private bool FavoriteExists(int? id)
+        {
+            if (User.Claims.Any())
+            {
+                var claimsIdentity = (ClaimsIdentity)User.Identity!;
+                var claim = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier);
+                String userId = claim!.Value;
+
+                return _db.Favorites.Any(e => e.IdApi == id && e.IdentityUserId == userId && e.Type == "serie");
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
