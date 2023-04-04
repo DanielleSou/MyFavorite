@@ -8,13 +8,9 @@ namespace MyFavorite.Data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Filme> Filmes { get; set; }
-
-        public DbSet<ResponseDetailsSerie> Series { get; set; }
-
-        public DbSet< ResponseDetailsFilme> FavoritosFilme { get; set;}
-       
-        public DbSet<ResponseDetailsSerie> FavoritosSerie { get; set; }
+        public DbSet<Favorite>Favorites { get; set;  }
+        
+      
     }
 
 }
