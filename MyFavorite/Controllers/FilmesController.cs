@@ -9,6 +9,12 @@ namespace MyFavorite.Controllers
 {
     public class FilmesController : Controller
     {
+        private ApplicationDbContext _db;
+
+        public FilmesController(ApplicationDbContext db)
+        {
+            _db = db;
+        }
         public IActionResult Index(int? pageNo)
         {
             int pageToRequest = (int)(pageNo == null ? 1 : pageNo);
